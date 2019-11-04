@@ -1,0 +1,5 @@
+<% if @password_change == true %>
+  <%= render partial: "edit_password", locals: {path: "/profile/#{@user.id}/password", method: :patch, button: 'Submit Changes'} %>
+<% elsif @password_change == false %>
+  <%= render partial: "edit_profile", locals: {path: "/profile/#{@user.id}", method: :put, button: 'Submit Changes'} %>
+<% end %>

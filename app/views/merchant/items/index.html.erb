@@ -1,0 +1,26 @@
+<h1>My Items</h1>
+
+<section class="grid-container">
+  <% @items.each do |item| %>
+    <section class= "grid-item" id='item-<%=item.id%>'>
+      <h2> <%=link_to item.name, "/items/#{item.id}" %> </h2>
+      <p>Sold by: <%=link_to item.merchant.name, "/merchants/#{item.merchant.id}" %></p>
+      <a id=<%="image-#{item.id}"%> href=<%="/items/#{item.id}"%>><img src= <%= item.image %>></a>
+      <p> <%= item.description  %> </p>
+      <p>Price: <%= number_to_currency(item.price) %> </p>
+      <p>Inventory: <%= item.inventory %> </p>
+      <% if item.active? %>
+        <p>Active</p>
+        <p><%= link_to 'Deactivate', "/merchant/items/#{item.id}/deactivate"  %></p>
+      <% elsif !item.active? %>
+        <p>Inactive</p>
+        <p><%= link_to 'Activate', "/merchant/items/#{item.id}/activate" %></p>
+      <% end %>
+      <% if item.orders.empty? %>
+      <p><%= link_to 'Delete Item', "/merchant/items/#{item.id}", method: :delete %></p>
+      <% end  %>
+      <p><%= link_to "Edit Item", "/merchant/items/#{item.id}/edit" %></p>
+    </section>
+  <% end %>
+  <p><%= link_to 'Add New Item', '/merchant/items/new' %></p>
+</section>

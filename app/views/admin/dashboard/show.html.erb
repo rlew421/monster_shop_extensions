@@ -1,0 +1,62 @@
+<h2>My Admin Dashboard</h2>
+<section>
+  <p> <%= @user.name %> </p>
+  <p>Address: <%= @user.address %> </p>
+  <p>City: <%= @user.city %> </p>
+  <p>State: <%= @user.state %> </p>
+  <p>Zip Code: <%= @user.zip%> </p>
+  <p>E-mail: <%= @user.email %> </p>
+</section>
+
+<h2>All Orders: </h2>
+
+<section id="packaged">
+  <h4>Packaged:</h4>
+  <% @packaged.each do |order| %>
+    <section id="orders-<%= order.id %>">
+      <p>Placed by: <%= link_to order.user.name, "/admin/users/#{order.user.id}" %></p>
+      <p>Order ID: <%= order.id %></p>
+      <p>Creation Date: <%= order.created_at.to_formatted_s(:long_ordinal)%></p>
+      <p><%= link_to 'Ship Order', "/admin/orders/#{order.id}/ship" %><p>
+    </section>
+  <% end %>
+</section>
+
+<section id="pending">
+  <h4>Pending:</h4>
+  <% if !@pending.nil? %>
+    <% @pending.each do |order| %>
+      <section id="orders-<%= order.id %>">
+        <p>Placed by: <%= link_to order.user.name, "/admin/users/#{order.user.id}" %></p>
+        <p>Order ID: <%= order.id %></p>
+        <p>Creation Date: <%= order.created_at.to_formatted_s(:long_ordinal)%></p>
+      </section>
+    <% end %>
+  <% end %>
+  </section>
+
+<section id="shipped">
+  <h4>Shipped:</h4>
+  <% if !@shipped.nil? %>
+    <% @shipped.each do |order| %>
+      <section id="orders-<%= order.id %>">
+        <p>Placed by: <%= link_to order.user.name, "/admin/users/#{order.user.id}" %></p>
+        <p>Order ID: <%= order.id %></p>
+        <p>Creation Date: <%= order.created_at.to_formatted_s(:long_ordinal)%></p>
+      </section>
+    <% end %>
+  <% end %>
+</section>
+
+<section id="cancelled">
+  <h4>Cancelled:</h4>
+  <% if !@cancelled.nil? %>
+  <% @cancelled.each do |order| %>
+      <section id="orders-<%= order.id %>">
+        <p>Placed by: <%= link_to order.user.name, "/admin/users/#{order.user.id}" %></p>
+        <p>Order ID: <%= order.id %></p>
+        <p>Creation Date: <%= order.created_at.to_formatted_s(:long_ordinal)%></p>
+      </section>
+    <% end %>
+  <% end %>
+</section>

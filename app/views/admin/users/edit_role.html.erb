@@ -1,0 +1,11 @@
+<h2>Choose the Merchant and Role you would like assigned to <%= "#{@user.name}" %></h2>
+<%= form_tag "/admin/users/#{@user.id}/upgrade", method: "patch" do %>
+
+  <%= label_tag "Merchant" %>
+  <%= select_tag "merchant", options_from_collection_for_select(@merchants, 'id', 'name'), :prompt => '' %>
+
+  <%= label_tag "New Role" %>
+  <%= select_tag "role", options_for_select([[''], ["Employee", 1], ["Admin", 2]], selected:'' ) %>
+
+  <%= submit_tag "Submit Change" %>
+<% end %>

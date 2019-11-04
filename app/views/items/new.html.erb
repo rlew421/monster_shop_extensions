@@ -1,0 +1,5 @@
+<h1>Create New Item For <%=link_to @merchant.name, "/merchants/#{@merchant.id}" %></h1>
+
+<center>
+  <%= render partial: 'item_partial', locals: {value: false, path: "/merchants/#{@merchant.id}/items", method: :post, button: 'Create Item'} %>
+</center>

@@ -1,0 +1,21 @@
+<h2>Merchant Dashboard for <%= @merchant.name %></h2>
+<section>
+  <p>Employer: <%= @merchant.name %></p>
+  <p>Address:  <%= @merchant.address %></p>
+  <p>City:  <%= @merchant.city %></p>
+  <p>State:  <%= @merchant.state %> </p>
+  <p>Zip Code: <%= @merchant.zip %> </p>
+</section>
+
+<% @orders.each do |order| %>
+  <section id="order-<%=order.id%>">
+    <p>Order ID:  <%= link_to order.id, "/merchant/orders/order.id"%></p>
+    <p>Date of Order:  <%= order.created_at.to_formatted_s(:long_ordinal) %></p>
+    <p>My Item Quantity: <%= order.merchant_item_quantity(@merchant) %>   </p>
+    <p>My Total Value: <%= number_to_currency(order.merchant_total_value(@merchant)) %>   </p>
+  </section>
+<% end %>
+
+<section>
+  <%= link_to "View #{@merchant.name}'s Items", "/admin/merchants/#{@merchant.id}/items" %>
+</section>

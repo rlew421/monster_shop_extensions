@@ -1,0 +1,189 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import url('https://fonts.googleapis.com/css?family=Raleway:600&display=swap');
+
+ body {
+ background-color: white;
+ }
+
+ h1 {
+  text-align: center;
+ 	font-size: 40px;
+ 	color: #002244;
+ 	font-family: 'Raleway', sans-serif;
+ }
+
+ h2 {
+  text-align: center;
+   font-size: 30px;
+   color: #002244;
+   font-family: 'Raleway', sans-serif;
+ }
+
+ p {
+  font-family: 'Raleway', sans-serif;
+ }
+
+ul{
+  padding: 0px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+img{
+  width: 50%;
+}
+
+#cart-image{
+  width:50px;
+}
+
+section[id*='view-my-items'] {
+  font-family: 'Raleway', sans-serif;
+}
+
+section[id*='review'] {
+  background-color: #DCDCDC;
+}
+.list-reviews {
+  display: grid;
+  width: 50%;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 30px;
+  font-family: 'Raleway', sans-serif;
+}
+
+ .grid-container{
+ 	display: grid;
+ 	grid-template-columns: repeat(5,1fr);
+ 	grid-template-rows: auto;
+ 	grid-gap: 30px;
+  font-family: 'Raleway', sans-serif;
+ }
+
+ .grid-item{
+ 	background-color: #17BEBB;
+ 	padding: 20px;
+  border: solid;
+ 	border-radius: 12px;
+  border-color: #002244;
+  font-family: 'Raleway', sans-serif;
+ 	text-align: center
+ }
+ .item-show-grid{
+  width: 60%;
+ 	display: grid;
+  border: solid;
+  border-radius: 12px;
+ 	grid-template-columns: repeat(2,1fr);
+  font-family: 'Raleway', sans-serif;
+ }
+
+ .item-show-item{
+ 	padding: 20px;
+ 	text-align: right;
+  font-family: 'Raleway', sans-serif;
+ }
+
+ .topnav {
+   overflow: hidden;
+   background-color: #002244;
+   font-family: 'Raleway', sans-serif;
+   color: #f2f2f2;
+ }
+
+ .topnav a {
+   float: left;
+   color: #f2f2f2;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+   font-family: 'Raleway', sans-serif;
+ }
+
+ .topnav a:hover {
+   background-color: #17BEBB;
+   color: black;
+ }
+
+ .address{
+   text-align: center;
+   font-family: 'Raleway', sans-serif;
+ }
+
+ input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #17BEBB;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+form {
+  align-content: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 60%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.error-flash {
+  padding: 10px;
+  background-color: tomato;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+.success-flash {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+table {
+  font-family: 'Raleway', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #f2f2f2;
+  text-align: center;
+  padding: 8px;
+  font-family: 'Raleway', sans-serif;
+}
+
+tr:nth-child(even) {
+  background-color: #F0F8FF;
+}

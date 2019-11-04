@@ -1,0 +1,12 @@
+<h1>Your Orders</h1>
+
+<% @orders.each do |order| %>
+  <section id="orders-<%= order.id %>">
+    <p>Order ID: <%= link_to order.id, "/profile/orders/#{order.id}" %></p>
+    <p>Creation Date: <%= order.created_at.to_formatted_s(:long_ordinal) %></p>
+    <p>Last Updated: <%= order.updated_at.to_formatted_s(:long_ordinal) %>   </p>
+    <p>Status:  <%= order.status %>   </p>
+    <p>Number of Items:  <%= order.item_count %>   </p>
+    <p>Grand Total: <%=number_to_currency(order.grandtotal)%></p>
+  </section>
+<% end %>

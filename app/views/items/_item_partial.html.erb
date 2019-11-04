@@ -1,0 +1,20 @@
+<center>
+  <%= form_tag path, method: method do  %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, value ? ("#{@item.name}") : (nil)  %>
+
+    <%= label_tag :description %>
+    <%= text_field_tag :description, value ? ("#{@item.description}") : (nil)  %>
+
+    <%= label_tag :price %>
+    <%= text_field_tag :price, value ? ("#{number_to_currency(@item.price)}") : (nil)  %>
+
+    <%= label_tag :image %>
+    <%= text_field_tag :image, value ? ("#{@item.image}") : (nil)  %>
+
+    <%= label_tag :inventory %>
+    <%= text_field_tag :inventory, value ? ("#{@item.inventory}") : (nil)  %>
+
+    <%= submit_tag button %>
+  <% end %>
+</center>
