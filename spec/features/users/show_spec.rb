@@ -35,5 +35,22 @@ describe "As a regular User" do
 
       expect(current_path).to eq("/profile/orders")
     end
+
+    it "I can see all of my addresses" do
+      other_address = @user.addresses.create!(address: '505 West St', city: 'Denver', state: 'Colorado', zip: '10225' )
+
+      visit "/profile/#{@user.id}"
+
+      expect(page).to have_content('953 Sunshine Ave')
+      expect(page).to have_content('City: Honolulu')
+      expect(page).to have_content('State: Hawaii')
+      expect(page).to have_content('Zip Code: 96701')
+
+      expect(page).to have_content('505 West St')
+      expect(page).to have_content('City: Denver')
+      expect(page).to have_content('State: Colorado')
+      expect(page).to have_content('Zip Code: 10225')
+
+    end
   end
 end
